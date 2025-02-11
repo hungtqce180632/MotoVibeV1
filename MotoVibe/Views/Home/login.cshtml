@@ -1,0 +1,169 @@
+﻿@{
+    ViewBag.Title = "Login";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        .login-container {
+            display: flex;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .login-form {
+            padding: 30px;
+            width: 300px;
+        }
+
+            .login-form h2 {
+                margin-bottom: 20px;
+                font-size: 22px;
+            }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+            .input-group label {
+                display: block;
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+
+            .input-group input {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+
+            .input-group .password-wrapper {
+                display: flex;
+                align-items: center;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                padding: 10px;
+            }
+
+                .input-group .password-wrapper input {
+                    border: none;
+                    flex: 1;
+                    padding: 0;
+                }
+
+                .input-group .password-wrapper i {
+                    cursor: pointer;
+                }
+
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .google-btn {
+            width: 100%;
+            padding: 10px;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+            .google-btn img {
+                width: 20px;
+                margin-right: 10px;
+            }
+
+        .forgot-password {
+            display: block;
+            text-align: right;
+            margin-top: 5px;
+        }
+
+        .signup {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .store-image {
+            width: 400px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="login-form">
+            <h2>Welcome Back To MotoVibe Store</h2>
+
+            <form method="post" action="/Account/Login">
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" name="email" placeholder="Enter Your Email" required />
+                </div>
+
+                <div class="input-group">
+                    <label>Password</label>
+                    <div class="password-wrapper">
+                        <input type="password" name="password" placeholder="Enter Your Password" required />
+                        <i onclick="togglePassword()">👁️</i>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn">Sign In</button>
+
+                <p class="forgot-password">
+                    <a href="#">Forgot Password?</a>
+                </p>
+
+                <p class="signup">
+                    Don't have an account? <a href="#">Sign Up</a>
+                </p>
+            </form>
+
+            <button class="google-btn">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" alt="Google Logo">
+                Sign in with Google
+            </button>
+        </div>
+
+        <img src="/images/motovibe-store.png" class="store-image" alt="MotoVibe Store">
+    </div>
+
+    <script>
+        function togglePassword() {
+            var passwordInput = document.querySelector(\".password-wrapper input\");
+            if (passwordInput.type === \"password\") {
+            passwordInput.type = \"text\";
+        } else {
+            passwordInput.type = \"password\";
+        }
+        }
+    </script>
+
+</body>
+</html>
