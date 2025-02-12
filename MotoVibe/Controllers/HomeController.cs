@@ -80,5 +80,9 @@ namespace MotoVibe.Controllers
         {
             return View();
         }
+        public ActionResult CreateBlog()
+        {
+            return View();
+        }
     }
 }
