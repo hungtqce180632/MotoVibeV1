@@ -1,0 +1,116 @@
+﻿@{
+    ViewBag.Title = "Wishlist";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <style>
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #d1d1d1;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .wishlist-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .wishlist-item {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            width: 220px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 320px; /* Đảm bảo chiều cao bằng nhau */
+        }
+
+        .wishlist-item img {
+            width: 100%;
+            height: 140px; /* Đặt chiều cao cố định */
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .wishlist-item h3 {
+            font-size: 16px;
+            margin: 10px 0;
+            flex-grow: 1;
+        }
+
+        .wishlist-item p {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .btn-remove {
+            background: #ff4d4d;
+            color: white;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            width: 100%;
+            margin-top: auto;
+        }
+
+        .btn-remove:hover {
+            background: #cc0000;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Your Wishlist</h2>
+
+        <div class="wishlist-grid">
+            <!-- Sản phẩm 1: Satria xanh cá tính -->
+            <div class="wishlist-item">
+                <img src="https://vnn-imgs-f.vgcloud.vn/2019/04/18/18/xe.jpg" alt="Satria xanh cá tính">
+                <h3>Satria xanh cá tính</h3>
+                <p>45,000,000 VND</p>
+                <button class="btn-remove">Remove from Wishlist</button>
+            </div>
+
+            <!-- Sản phẩm 2: Chiến mã Dream -->
+            <div class="wishlist-item">
+                <img src="http://static.cand.com.vn/Files/Image/anbinh/2020/05/12/thumb_660_f77ad8ea-0305-4b67-8cbb-82ed73344fcb.jpg" alt="Chiến mã Dream">
+                <h3>Chiến mã Dream</h3>
+                <p>20,000,000 VND</p>
+                <button class="btn-remove">Remove from Wishlist</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

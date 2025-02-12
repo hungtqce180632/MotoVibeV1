@@ -80,5 +80,41 @@ namespace MotoVibe.Controllers
         {
             return View();
         }
+
+        public ActionResult Review()
+        {
+            return View();
+        }
+        
+
+        public ActionResult Forget()
+        {
+            return View();
+        }
+        
+        public ActionResult Register()
+        {
+            return View();
+        }
+
+        public ActionResult MakeOrder()
+        {
+            return View();
+        }
+        
+        public ActionResult CustomerProfile()
+        {
+            return View();
+        }
+        
+        public ActionResult WishList()
+        {
+            return View();
+        }
+        
+        public ActionResult ListOrders()
+        {
+            return View();
+        }
     }
 }

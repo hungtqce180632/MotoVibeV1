@@ -1,0 +1,198 @@
+﻿@{
+    ViewBag.Title = "ListOrders";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <style>
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background: #f0f0f0;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .status-done {
+            color: green;
+            font-weight: bold;
+        }
+
+        .status-expired {
+            color: red;
+            font-weight: bold;
+        }
+
+        .status-not-done {
+            color: orange;
+            font-weight: bold;
+        }
+
+        .btn-edit {
+            background: #007bff;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-edit:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>List of Orders</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>OrderID</th>
+                    <th>CusID</th>
+                    <th>EmpID</th>
+                    <th>Moto ID</th>
+                    <th>Create Date</th>
+                    <th>Pay Method</th>
+                    <th>Start</th>
+                    <th>End</th>
+                    <th>Total</th>
+                    <th>Deposit</th>
+                    <th>Status</th>
+                    <th>Warranty</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Đơn hàng 1 -->
+                <tr>
+                    <td>1</td>
+                    <td>6</td>
+                    <td>4</td>
+                    <td>42</td>
+                    <td>2024-10-24 01:57:39</td>
+                    <td>Online Transfer</td>
+                    <td>2024-10-24</td>
+                    <td>2024-10-31</td>
+                    <td>10,000</td>
+                    <td>Done</td>
+                    <td class="status-done">Done</td>
+                    <td><button class="btn-edit">Edit Warranty</button></td>
+                    <td>-</td>
+                </tr>
+
+                <!-- Đơn hàng 2 -->
+                <tr>
+                    <td>3</td>
+                    <td>6</td>
+                    <td>4</td>
+                    <td>42</td>
+                    <td>2024-10-24 02:04:10</td>
+                    <td>Online Transfer</td>
+                    <td>2024-10-24</td>
+                    <td>2024-10-25</td>
+                    <td>10,000</td>
+                    <td>Done</td>
+                    <td class="status-expired">Expired</td>
+                    <td class="status-expired">No Warranty</td>
+                    <td>-</td>
+                </tr>
+
+                <!-- Đơn hàng 3 -->
+                <tr>
+                    <td>4</td>
+                    <td>6</td>
+                    <td>4</td>
+                    <td>42</td>
+                    <td>2024-10-24 02:05:17</td>
+                    <td>Online Transfer</td>
+                    <td>2024-10-24</td>
+                    <td>2024-10-31</td>
+                    <td>10,000</td>
+                    <td>Not Done</td>
+                    <td class="status-expired">Expired</td>
+                    <td class="status-expired">No Warranty</td>
+                    <td>-</td>
+                </tr>
+
+                <!-- Đơn hàng 4 -->
+                <tr>
+                    <td>19</td>
+                    <td>6</td>
+                    <td>1</td>
+                    <td>42</td>
+                    <td>2024-10-27 12:11:28</td>
+                    <td>Online Transfer</td>
+                    <td>2024-10-27</td>
+                    <td>2024-11-07</td>
+                    <td>20,000</td>
+                    <td>True</td>
+                    <td class="status-done">Done</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+
+                <!-- Đơn hàng 5 -->
+                <tr>
+                    <td>26</td>
+                    <td>6</td>
+                    <td>1</td>
+                    <td>42</td>
+                    <td>2024-10-31 00:24:25</td>
+                    <td>Online Transfer</td>
+                    <td>2024-10-31</td>
+                    <td>2024-11-07</td>
+                    <td>11,000</td>
+                    <td>True</td>
+                    <td class="status-done">Done</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

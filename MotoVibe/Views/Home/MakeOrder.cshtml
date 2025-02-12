@@ -1,0 +1,237 @@
+﻿@{
+    ViewBag.Title = "MakeOrder";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1100px;
+            margin: auto;
+            padding: 10px;
+        }
+
+        /* Cột trái: Thông tin xe */
+        .left-section {
+            width: 45%;
+        }
+
+            .left-section img {
+                width: 100%;
+                max-width: 400px;
+                display: block;
+                margin-bottom: 15px;
+            }
+
+        .info {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+            .info p {
+                margin: 5px 0;
+            }
+
+        /* Cột phải: Form nhập thông tin */
+        .right-section {
+            width: 50%;
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+            .right-section h3 {
+                background: #ddd;
+                padding: 10px;
+                margin: -20px -20px 10px -20px;
+                text-align: center;
+                font-size: 18px;
+            }
+
+        .input-group {
+            margin-bottom: 10px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        .deposit-section {
+            margin-top: 10px;
+            padding: 10px;
+            background: #e0e0e0;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .qr-code {
+            text-align: left;
+            margin-top: 5px;
+        }
+
+            .qr-code button {
+                background: #007bff;
+                color: white;
+                padding: 5px 10px;
+                border: none;
+                border-radius: 5px;
+                font-size: 14px;
+                cursor: pointer;
+            }
+
+                .qr-code button:hover {
+                    background: #0056b3;
+                }
+
+        .checkbox-group {
+            margin-top: 10px;
+            font-size: 12px;
+        }
+
+            .checkbox-group a {
+                color: #007bff;
+                text-decoration: none;
+            }
+
+                .checkbox-group a:hover {
+                    text-decoration: underline;
+                }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .btn {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .btn-confirm {
+            background: #28a745;
+            color: white;
+        }
+
+        .btn-cancel {
+            background: #ccc;
+            color: black;
+        }
+
+        .btn-confirm:hover {
+            background: #218838;
+        }
+
+        .btn-cancel:hover {
+            background: #b3b3b3;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Motorbike Order Summary</h2>
+
+        <div class="container">
+            <!-- Cột bên trái: Chi tiết xe -->
+            <div class="left-section">
+                <h3>Motorbike detail</h3>
+                <img src="https://vnn-imgs-f.vgcloud.vn/2019/04/18/18/xe.jpg" alt="Motorbike Image">
+                <div class="info">
+                    <p><strong>Motorbike name:</strong> Xe thứ 4</p>
+                    <p><strong>Brand:</strong> Suzuki</p>
+                    <p><strong>Model:</strong> Sport</p>
+                    <p><strong>Fuel:</strong> Petrol</p>
+                    <p><strong>Color:</strong> Red</p>
+                    <p><strong>Quantity:</strong> 1</p>
+                    <p><strong>Price:</strong> 45,000,000 VND</p>
+                </div>
+            </div>
+
+            <!-- Cột bên phải: Form nhập thông tin khách hàng -->
+            <div class="right-section">
+                <h3>Customer information</h3>
+
+                <div class="input-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Enter Your Name">
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter Your Email">
+                </div>
+
+                <div class="input-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="text" id="phone" placeholder="Enter Your Phone Number">
+                </div>
+
+                <div class="input-group">
+                    <label for="id">ID</label>
+                    <input type="text" id="id" placeholder="Enter Your ID">
+                </div>
+
+                <div class="input-group">
+                    <label for="address">Address</label>
+                    <textarea id="address" rows="2" placeholder="Enter Your Address"></textarea>
+                </div>
+
+                <!-- Chi tiết đặt cọc -->
+                <div class="deposit-section">
+                    <p><strong>Deposit Details</strong></p>
+                    <p><strong>Deposit Amount (5% of Car Price):</strong> 2,250,000 VND</p>
+                    <div class="qr-code">
+                        <button>QR Code</button>
+                    </div>
+                </div>
+
+                <!-- Checkbox xác nhận -->
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms">
+                    <label for="terms">I have made the payment and agree to the <a href="#">terms & policy</a></label>
+                </div>
+
+                <!-- Nút xác nhận đơn hàng -->
+                <div class="button-group">
+                    <button class="btn btn-confirm">Confirm Order</button>
+                    <button class="btn btn-cancel">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
