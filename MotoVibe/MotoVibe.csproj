@@ -173,8 +173,7 @@
     <Content Include="Views\Home\EmployeeProfile.cshtml" />
     <Content Include="Views\Home\ViewListOrder.cshtml" />
     <Content Include="Views\Home\CreateOrder.cshtml" />
-    <Content Include="Views\Home\ManageReview.cshtml" />
-    <Content Include="Views\Home\ManageFeedback.cshtml" />
+    <Content Include="Views\Home\About - Copy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
