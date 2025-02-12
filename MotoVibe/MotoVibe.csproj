@@ -168,12 +168,20 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\Home\ListWarranty.cshtml" />
     <Content Include="Views\Home\CreateAppointment.cshtml" />
     <Content Include="Views\Home\EmployeeProfile.cshtml" />
     <Content Include="Views\Home\ViewListOrder.cshtml" />
     <Content Include="Views\Home\CreateOrder.cshtml" />
     <Content Include="Views\Home\About - Copy.cshtml" />
+=======
+    <Content Include="Views\Home\login.cshtml" />
+    <Content Include="Views\Home\listproduct.cshtml" />
+    <Content Include="Views\Home\detailproduct.cshtml" />
+    <Content Include="Views\Home\Blog.cshtml" />
+    <Content Include="Views\Home\detaiblog.cshtml" />
+>>>>>>> 543e3903d9f084922f52d5d0acddc061581189e1
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewBag.Title = "listproduct";
+}
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #a42d22;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 28px;
+        }
+
+        .product-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .product-card {
+            background: white;
+            color: black;
+            width: 280px;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+            .product-card img {
+                width: 100%;
+                border-radius: 10px;
+            }
+
+        .product-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .product-price {
+            font-size: 16px;
+            color: red;
+            margin: 5px 0;
+        }
+
+        .buy-button {
+            display: inline-block;
+            padding: 10px 15px;
+            background: black;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+            .buy-button:hover {
+                background: #333;
+            }
+    </style>
+</head>
+<body>
+    <h1>@ViewBag.Title</h1>
+    <div class="product-container">
+        @*@foreach (var product in ViewBag.Products)
+        {
+            <div class="product-card">
+                <img src="@product.ImageUrl" alt="@product.Name">
+                <div class="product-title">@product.Name</div>
+                <div class="product-price">@product.Price VND</div>
+                <a href="#" class="buy-button">Chọn Mua Sản Phẩm</a>
+            </div>
+        }*@
+    </div>
+</body>
+</html>
+
