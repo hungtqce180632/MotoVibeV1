@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "Create Appointment";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            .btn-primary:hover {
+                background-color: #0056b3;
+            }
+    </style>
+</head>
+<body>
+    <h2>Create Appointment</h2>
+
+    <form action="@Url.Action("Create", "Appointment")" method="post">
+        <div class="form-group">
+            <label for="CustomerName">Customer Name</label>
+            <input type="text" id="CustomerName" name="CustomerName" class="form-control" value="@Model?.CustomerName" />
+        </div>
+        <div class="form-group">
+            <label for="AppointmentDate">Appointment Date</label>
+            <input type="date" id="AppointmentDate" name="AppointmentDate" class="form-control" value="@Model?.AppointmentDate.ToString("yyyy-MM-dd")" />
+        </div>
+        <div class="form-group">
+            <label for="Description">Description</label>
+            <textarea id="Description" name="Description" class="form-control">@Model?.Description</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+</body>
+</html>
+``` ▋

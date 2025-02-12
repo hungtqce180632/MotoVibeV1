@@ -16,14 +16,48 @@ namespace MotoVibe.Controllers
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
+            return View();
+        }
 
+ 
+        public ActionResult ListWarranty()
+        {
+            return View();
+        }
+
+        public ActionResult CreateAppointment()
+        {
+            return View();
+        }
+
+        public ActionResult EmployeeProfile()
+        {
+            return View();
+        }
+
+        public ActionResult ViewListOrder()
+        {
+            return View();
+        }
+
+        public ActionResult CreateOrder()
+        {
+            return View();
+        }
+
+        public ActionResult ManageReview()
+        {
+            return View();
+        }
+
+        public ActionResult ManageFeedback()
+        {
             return View();
         }
     }

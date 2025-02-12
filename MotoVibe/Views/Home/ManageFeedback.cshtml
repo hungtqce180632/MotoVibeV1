@@ -1,0 +1,108 @@
+﻿@{
+    ViewBag.Title = "Manage Feedback";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .table {
+            width: 100%;
+            max-width: 1000px;
+            margin: auto;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+            .table th, .table td {
+                padding: 12px;
+                border: 1px solid #ddd;
+                text-align: left;
+            }
+
+            .table th {
+                background-color: #f2f2f2;
+            }
+
+            .table tbody tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+
+            .table tbody tr:hover {
+                background-color: #f1f1f1;
+            }
+
+        .actions a {
+            text-decoration: none;
+            color: #007bff;
+            margin: 0 5px;
+        }
+
+            .actions a:hover {
+                text-decoration: underline;
+            }
+
+        .no-data {
+            text-align: center;
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Manage Feedbacks</h2>
+
+    @if (Model != null && Model.Feedbacks != null && Model.Feedbacks.Any())
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Feedback ID</th>
+                    <th>Product</th>
+                    <th>Customer</th>
+                    <th>Rating</th>
+                    <th>Feedback</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var feedback in Model.Feedbacks)
+                {
+                    <tr>
+                        <td>@feedback.Id</td>
+                        <td>@feedback.ProductName</td>
+                        <td>@feedback.CustomerName</td>
+                        <td>@feedback.Rating</td>
+                        <td>@feedback.FeedbackText</td>
+                        <td class="actions">
+                            @Html.ActionLink("Edit", "Edit", new { id = feedback.Id }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = feedback.Id })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p class="no-data">No feedback available.</p>
+    }
+</body>
+</html>

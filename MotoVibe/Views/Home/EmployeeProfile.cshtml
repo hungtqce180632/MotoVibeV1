@@ -1,0 +1,88 @@
+﻿@{
+    ViewBag.Title = "Employee Profile";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .profile {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+            .form-group label {
+                font-weight: bold;
+                display: inline-block;
+                width: 150px;
+            }
+
+            .form-group span {
+                display: inline-block;
+                font-weight: normal;
+            }
+
+        .no-data {
+            text-align: center;
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Employee Profile</h2>
+
+    @if (Model != null)
+    {
+        <div class="profile">
+            <div class="form-group">
+                <label>Employee ID:</label>
+                <span>@Model.EmployeeId</span>
+            </div>
+            <div class="form-group">
+                <label>Name:</label>
+                <span>@Model.Name</span>
+            </div>
+            <div class="form-group">
+                <label>Position:</label>
+                <span>@Model.Position</span>
+            </div>
+            <div class="form-group">
+                <label>Department:</label>
+                <span>@Model.Department</span>
+            </div>
+            <div class="form-group">
+                <label>Email:</label>
+                <span>@Model.Email</span>
+            </div>
+        </div>
+    }
+    else
+    {
+        <p class="no-data">No employee data available.</p>
+    }
+</body>
+</html>
