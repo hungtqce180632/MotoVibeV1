@@ -1,39 +1,135 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - MotoVibe</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <style>
+        :root {
+            --primary-color: #ff4d4d;
+            --dark-color: #1a1a1a;
+            --light-color: #f8f9fa;
+        }
+
+        .navbar {
+            background-color: var(--dark-color) !important;
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--primary-color) !important;
+        }
+
+        .nav-link {
+            color: var(--light-color) !important;
+            transition: all 0.3s ease;
+        }
+
+            .nav-link:hover {
+                color: var(--primary-color) !important;
+            }
+
+        .footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+
+        .hero-section {
+            background: url('/Content/images/banner.jpg') center/cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+    </style>
 </head>
 <body>
-    @*<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="@Url.Action("Index", "Home")">
+                <img src="/Content/images/logo.png" alt="MotoVibe Logo" height="40" class="d-inline-block align-top me-2">
+                MotoVibe
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
-                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Motorcycles", "Listproduct", "Home", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Blog", "Blog", "Home", null, new { @class = "nav-link" })</li>
+
+                    @if (Request.IsAuthenticated)
+                    {
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                <i class="fas fa-user"></i> Account
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                @if (User.IsInRole("Admin"))
+                                {
+                                    <li>@Html.ActionLink("Dashboard", "AdminDashboard", "Home", null, new { @class = "dropdown-item" })</li>
+                                }
+                                <li>@Html.ActionLink("Profile", "CustomerProfile", "Home", null, new { @class = "dropdown-item" })</li>
+                                <li>@Html.ActionLink("Orders", "ViewListOrder", "Home", null, new { @class = "dropdown-item" })</li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li>@Html.ActionLink("Logout", "Logout", "Account", null, new { @class = "dropdown-item text-danger" })</li>
+                            </ul>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">@Html.ActionLink("Login", "Login", "Account", null, new { @class = "nav-link" })</li>
+                        <li class="nav-item">@Html.ActionLink("Register", "SignUp", "Account", null, new { @class = "nav-link" })</li>
+                    }
                 </ul>
             </div>
         </div>
-    </nav>*@
-    <div class="container body-content">
+    </nav>
+
+    <main class="container-fluid p-0">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <p>123 Motor Street<br>New York, NY 10001<br>Phone: (555) 123-4567</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li>@Html.ActionLink("About Us", "About", "Home")</li>
+                        <li>@Html.ActionLink("Privacy Policy", "Privacy", "Home")</li>
+                        <li>@Html.ActionLink("Terms of Service", "Terms", "Home")</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <div class="social-links">
+                        <a href="#" class="text-light me-3"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p>&copy; @DateTime.Now.Year - MotoVibe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

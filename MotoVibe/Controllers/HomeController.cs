@@ -1,27 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
+using MotoVibe.Models;
 
 namespace MotoVibe.Controllers
 {
     public class HomeController : Controller
     {
-        // Default Home Page
+        private AppDbContext db = new AppDbContext();
+
         public ActionResult Index()
         {
             return View();
         }
 
-        // About Page
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
             return View();
         }
 
-        // Contact Page
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
@@ -31,98 +29,109 @@ namespace MotoVibe.Controllers
         // List Warranty Page
         public ActionResult ListWarranty()
         {
-            // You can implement logic to get warranty data here if needed
-            return View();
+            var warranties = db.Warranties
+                              .Include(w => w.Order)
+                              .ToList();
+            return View(warranties);
         }
 
-        // Create Appointment Page
         public ActionResult CreateAppointment()
         {
-            // Logic for creating an appointment can go here
             return View();
         }
 
         // Employee Profile Page
-        public ActionResult EmployeeProfile()
+        public ActionResult EmployeeProfile(int employeeId)
         {
-            // Logic for displaying employee profile can go here
-            return View();
+            var employee = db.Employees
+                           .Include(e => e.UserAccount)
+                           .FirstOrDefault(e => e.Employee_id == employeeId);
+            return View(employee);
         }
 
         // View List Order Page
         public ActionResult ViewListOrder()
         {
-            // Logic for listing orders can be added here
-            return View();
+            var orders = db.Orders
+                         .Include(o => o.Customer)
+                         .Include(o => o.Motorbike)
+                         .ToList();
+            return View(orders);
         }
 
-        // Create Order Page
         public ActionResult CreateOrder()
         {
-            // Logic for creating an order can go here
             return View();
         }
 
         // Manage Review Page
         public ActionResult ManageReview()
         {
-            // Logic for managing reviews can go here
-            return View();
+            var reviews = db.Reviews
+                          .Include(r => r.Customer)
+                          .Include(r => r.Motorbike)
+                          .ToList();
+            return View(reviews);
         }
 
-        // Manage Feedback Page
         public ActionResult ManageFeedback()
         {
-            // Logic for managing feedback can go here
             return View();
         }
 
-        // Login Page
         public ActionResult Login()
         {
             return View();
         }
 
-        // Product List Page
+        // Product List Page (Motorbikes)
         public ActionResult Listproduct()
         {
-            // Logic for displaying product list can go here
-            return View();
+            var motorbikes = db.Motorbikes
+                              .Include(m => m.Brand)
+                              .Include(m => m.Model)
+                              .Include(m => m.Fuel)
+                              .ToList();
+            return View(motorbikes);
         }
 
-        // Product Detail Page
-        public ActionResult Detailproduct(int productId)  // Assuming you're passing the product ID
+        // Product Detail Page (Motorbike)
+        public ActionResult Detailproduct(int productId)
         {
-            // Retrieve product details based on ID, if needed
-            return View();
+            var motorbike = db.Motorbikes
+                            .Include(m => m.Brand)
+                            .Include(m => m.Model)
+                            .Include(m => m.Fuel)
+                            .FirstOrDefault(m => m.Motorbike_id == productId);
+            return View(motorbike);
         }
 
         // Blog List Page
         public ActionResult Blog()
         {
-            // Logic for fetching blog posts goes here
-            return View();
+            var blogs = db.Blogs
+                       .Include(b => b.Admin)
+                       .Where(b => b.Blog_status)
+                       .ToList();
+            return View(blogs);
         }
 
         // Blog Details Page
-        public ActionResult detaiblog(int blogId)  // Assuming you're passing the blog ID
+        public ActionResult detaiblog(int blogId)
         {
-            // Fetch the details for the specific blog post based on blogId
-            return View();
+            var blog = db.Blogs
+                      .Include(b => b.Admin)
+                      .FirstOrDefault(b => b.Blog_id == blogId);
+            return View(blog);
         }
 
-        public ActionResult Search()
+        protected override void Dispose(bool disposing)
         {
-            // Logic for fetching blog posts goes here
-            return View();
-        }
-        public ActionResult CreateBlog()
-        {
-            return View();
-        }
-        public ActionResult CreateBlog()
-        {
-            return View();
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
         }
     }
 }
