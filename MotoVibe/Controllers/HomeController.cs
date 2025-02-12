@@ -116,5 +116,9 @@ namespace MotoVibe.Controllers
             // Logic for fetching blog posts goes here
             return View();
         }
+        public ActionResult CreateBlog()
+        {
+            return View();
+        }
     }
 }
