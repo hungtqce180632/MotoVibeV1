@@ -176,7 +176,33 @@
     <Content Include="Views\Home\listproduct.cshtml" />
     <Content Include="Views\Home\detailproduct.cshtml" />
     <Content Include="Views\Home\Blog.cshtml" />
+    <Content Include="Views\Home\Search.cshtml" />
     <Content Include="Views\Home\detaiblog.cshtml" />
+    <Content Include="Views\Home\Review.cshtml" />
+    <Content Include="Views\Home\ForgetPassword.cshtml" />
+    <Content Include="Views\Home\SignUp.cshtml" />
+    <Content Include="Views\Home\MakeOrder.cshtml" />
+    <Content Include="Views\Home\CustomerProfile.cshtml" />
+    <Content Include="Views\Home\Wishlist.cshtml" />
+    <Content Include="Views\Home\ListOrders.cshtml" />
+    <Content Include="Views\Home\ViewLostOrder.cshtml" />
+    <Content Include="Views\Home\CreateOrder.cshtml" />
+    <Content Include="Views\Home\ManageReview.cshtml" />
+    <Content Include="Views\Home\AdminDashboard.cshtml" />
+    <Content Include="Views\Home\BlogManagement.cshtml" />
+    <Content Include="Views\Home\CreateEditBlog.cshtml" />
+    <Content Include="Views\Home\DisableBlog.cshtml" />
+    <Content Include="Views\Home\EmployeeList.cshtml" />
+    <Content Include="Views\Home\CreateEditEmployee.cshtml" />
+    <Content Include="Views\Home\DisableEmployee.cshtml" />
+    <Content Include="Views\Home\ProductList.cshtml" />
+    <Content Include="Views\Home\CreateEditProduct.cshtml" />
+    <Content Include="Views\Home\DisableProduct.cshtml" />
+    <Content Include="Views\Home\CustomerManagement.cshtml" />
+    <Content Include="Views\Home\OrderManagement.cshtml" />
+    <Content Include="Views\Home\WarrantyManagement.cshtml" />
+    <Content Include="Views\Home\ReviewManagement.cshtml" />
+    <Content Include="Views\Home\Logout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,86 +1,53 @@
 ﻿@{
-    ViewBag.Title = "Create Order";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Create Order (Employee)";
 }
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 20px;
-        }
+<h2>Create Order for Customer</h2>
 
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .btn-primary {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            text-align: center;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-            .btn-primary:hover {
-                background-color: #0056b3;
-            }
-
-        .form-container {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            max-width: 600px;
-            margin: auto;
-        }
-    </style>
-</head>
-<body>
-    <h2>Create Order</h2>
-
-    <div class="form-container">
-        <form action="@Url.Action("Create", "Order")" method="post">
+<div class="row">
+    <div class="col-md-6">
+        <form method="post" action="/Home/CreateOrder">
             <div class="form-group">
-                <label for="CustomerName">Customer Name</label>
-                <input type="text" id="CustomerName" name="CustomerName" class="form-control" value="@Model?.CustomerName" />
+                <label for="customerId">Customer</label>
+                <!-- Example dropdown listing customers -->
+                <select name="customerId" id="customerId" class="form-control" required>
+                    <option value="">-- Select Customer --</option>
+                    <option value="101">John Doe</option>
+                    <option value="102">Jane Doe</option>
+                </select>
             </div>
-            <div class="form-group">
-                <label for="ProductName">Product Name</label>
-                <input type="text" id="ProductName" name="ProductName" class="form-control" value="@Model?.ProductName" />
+
+            <div class="form-group" style="margin-top: 10px;">
+                <label for="productId">Select Product</label>
+                <select name="productId" id="productId" class="form-control" required>
+                    <option value="">-- Select Product --</option>
+                    <option value="1">Motorbike A</option>
+                    <option value="2">Motorbike B</option>
+                </select>
             </div>
-            <div class="form-group">
-                <label for="Quantity">Quantity</label>
-                <input type="number" id="Quantity" name="Quantity" class="form-control" value="@Model?.Quantity" />
+
+            <div class="form-group" style="margin-top: 10px;">
+                <label for="quantity">Quantity</label>
+                <input type="number" name="quantity" id="quantity" class="form-control" min="1" value="1" required />
             </div>
-            <div class="form-group">
-                <label for="OrderDate">Order Date</label>
-                <input type="date" id="OrderDate" name="OrderDate" class="form-control" value="@Model?.OrderDate.ToString("yyyy-MM-dd")" />
+
+            <div class="form-group" style="margin-top: 10px;">
+                <label for="orderStatus">Order Status</label>
+                <select name="orderStatus" id="orderStatus" class="form-control" required>
+                    <option value="">-- Select Status --</option>
+                    <option value="Processing">Processing</option>
+                    <option value="Shipped">Shipped</option>
+                    <option value="Canceled">Canceled</option>
+                </select>
             </div>
-            <button type="submit" class="btn btn-primary">Create</button>
+
+            <div class="form-group" style="margin-top: 10px;">
+                <label for="employeeNote">Employee Note</label>
+                <textarea name="employeeNote" id="employeeNote" rows="3" class="form-control" placeholder="Add any notes related to this order..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Create Order</button>
         </form>
     </div>
-</body>
-</html>
+</div>

@@ -1,84 +1,22 @@
-﻿
-@{
-    ViewBag.Title = "detaiblog";
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Blog Details";
 }
 
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f8f8;
-            margin: 0;
-            padding: 20px;
-        }
+<h2>Blog Details</h2>
 
-        .blog-container {
-            max-width: 800px;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .blog-title {
-            font-size: 28px;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 15px;
-        }
-
-        .blog-image {
-            text-align: center;
-        }
-
-            .blog-image img {
-                width: 100%;
-                max-width: 600px;
-                border-radius: 10px;
-            }
-
-        .blog-content {
-            font-size: 16px;
-            color: #333;
-            margin-top: 20px;
-        }
-
-        .blog-dates {
-            font-size: 14px;
-            color: #555;
-            margin-top: 10px;
-            text-align: left;
-        }
-
-        .highlight {
-            font-weight: bold;
-            color: #d9534f;
-        }
-    </style>
-</head>
-<body>
-    <div class="blog-container">
-        <h1 class="blog-title">Sự kiện tặng kèm gấu bông khi mua xe</h1>
-        <div class="blog-image">
-            <img src="bear-event.jpg" alt="Gấu bông sự kiện">
-        </div>
-        <div class="blog-dates">
-            <p><strong>Date Start:</strong> 2024-11-06</p>
-            <p><strong>Date End:</strong> 2024-11-11</p>
-        </div>
-        <div class="blog-content">
-            <p>🎁 <span class="highlight">SỰ KIỆN ĐẶC BIỆT: TẶNG GẤU BÔNG ĐÁNG YÊU KHI MUA XE! 🏍️🧸</span> 🎁</p>
-            <p>
-                Chỉ trong thời gian giới hạn, quý khách sẽ nhận ngay một chú gấu bông dễ thương khi mua bất kỳ dòng xe nào tại cửa hàng của chúng tôi!
-                Đây là món quà tri ân chúng tôi dành tặng đến quý khách hàng đã tin tưởng và đồng hành cùng thương hiệu.
-            </p>
-        </div>
+<div class="row">
+    <div class="col-md-12">
+        <!-- Replace with dynamic data from the blog model -->
+        <h3>Sample Blog Title</h3>
+        <p class="text-muted">Posted on: 01/01/2025 by John Doe</p>
+        <hr />
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent mollis eget lorem vitae pellentesque.
+            Vestibulum id purus eu nisi venenatis vehicula at id ante. Suspendisse suscipit blandit urna, quis tempor
+            felis. Curabitur dapibus varius sem, et interdum nisi dignissim id.
+        </p>
+        <hr />
+        <a href="/Home/Blog" class="btn btn-secondary">Back to Blog List</a>
     </div>
-</body>
-</html>
+</div>

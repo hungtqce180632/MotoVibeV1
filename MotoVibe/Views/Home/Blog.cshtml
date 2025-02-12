@@ -1,86 +1,26 @@
-﻿
-@{
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Blog";
 }
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 20px;
-        }
-
-        .blog-container {
-            max-width: 900px;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .blog-title {
-            font-size: 28px;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        .blog-post {
-            margin-bottom: 30px;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 20px;
-        }
-
-            .blog-post img {
-                width: 100%;
-                border-radius: 10px;
-            }
-
-            .blog-post h2 {
-                font-size: 22px;
-                margin-top: 10px;
-            }
-
-            .blog-post p {
-                font-size: 16px;
-                color: #333;
-            }
-
-        .read-more {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 15px;
-            background: orange;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-
-            .read-more:hover {
-                background: darkorange;
-            }
-    </style>
-</head>
-<body>
-    <div class="blog-container">
-        <h1 class="blog-title">MotoVibe Blog</h1>
-        @*@foreach (var post in ViewBag.BlogPosts)
-        {
-            <div class="blog-post">
-                <img src="@post.ImageUrl" alt="@post.Title">
-                <h2>@post.Title</h2>
-                <p>@post.Summary</p>
-                <a href="@post.Url" class="read-more">Read More</a>
+<h2>Blog</h2>
+<div class="row">
+    <div class="col-md-12">
+        <!-- Example list of blog posts; replace with real data from model -->
+        <div class="card mb-3">
+            <div class="card-body">
+                <h4 class="card-title">First Blog Title</h4>
+                <p class="card-text">A short description or introduction to the first blog...</p>
+                <a href="/Home/detaiblog?blogId=1" class="btn btn-primary">Read More</a>
             </div>
-        }*@
-    </div>
-</body>
-</html>
+        </div>
 
+        <div class="card mb-3">
+            <div class="card-body">
+                <h4 class="card-title">Second Blog Title</h4>
+                <p class="card-text">Another interesting introduction for the second blog post...</p>
+                <a href="/Home/detaiblog?blogId=2" class="btn btn-primary">Read More</a>
+            </div>
+        </div>
+    </div>
+</div>

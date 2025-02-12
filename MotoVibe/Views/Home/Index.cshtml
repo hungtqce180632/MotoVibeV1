@@ -1,106 +1,28 @@
 ﻿@{
-    ViewBag.Title = "index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Home Page";
 }
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<div class="jumbotron">
+    <h1>Welcome to MotoVibe</h1>
+    <p class="lead">
+        Find the best motorbikes, accessories, and service appointments.
+    </p>
+    <hr class="my-4" />
+    <p>
+        <a class="btn btn-primary btn-lg" href="/Home/Search" role="button">Search Products</a>
+        <a class="btn btn-success btn-lg" href="/Home/Blog" role="button">Check out our Blog</a>
+    </p>
+</div>
 
-<<<<<<< HEAD
-    <div class="row">
-        <section class="col-md-4" aria-labelledby="gettingStartedTitle">
-            <h2 id="gettingStartedTitle">Getting started</h2>
-            <p>
-                seng rất đẹp trai
-                enables a clean separation of concerns and gives you full control over markup
-                for enjoyable, agile development.
-            </p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-        </section>
-        <section class="col-md-4" aria-labelledby="librariesTitle">
-            <h2 id="librariesTitle">Get more libraries</h2>
-            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-        </section>
-        <section class="col-md-4" aria-labelledby="hostingTitle">
-            <h2 id="hostingTitle">Web Hosting</h2>
-            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-        </section>
-=======
-        html, body {
-            width: 100%;
-            height: 100%;
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .header {
-            width: 100%;
-            background: black;
-            color: white;
-            padding: 20px;
-            font-size: 24px;
-            text-align: center;
-            position: fixed;
-            top: 0;
-            left: 0;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 800px;
-            margin-top: 80px;
-            padding: 40px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            text-align: center;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 15px 30px;
-            margin: 15px;
-            color: white;
-            background: black;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 18px;
-            cursor: pointer;
-        }
-
-            .btn:hover {
-                background: #333;
-            }
-    </style>
-</head>
-<body>
-    <div class="header">
-        MotoVibe Store
-
+<div class="row">
+    <div class="col-md-12">
+        <h2>Latest Products</h2>
+        <!-- Example product listing (could be replaced with dynamic data) -->
+        <ul>
+            <li>Motorbike A</li>
+            <li>Motorbike B</li>
+            <li>Motorbike C</li>
+        </ul>
     </div>
-
-    <div class="container">
-        <h1>Welcome to MotoVibe Store</h1>
-        <p>Your one-stop shop for the best motorbikes!</p>
-        <a href="/ProductList" class="btn">View Motorbikes</a>
-        <a href="/Search" class="btn">Search Motorbikes</a>
-        <a href="/Blog" class="btn">Read Our Blog</a>
-    </div>
-</body>
-</html>
+</div>

@@ -1,20 +1,19 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewBag.Title = "Manage Reviews";
+    ViewBag.Title = "Review Management";
 }
 
-<h2>Manage Reviews</h2>
+<h2>Review Management</h2>
 
 <div class="row">
     <div class="col-md-12">
-        <!-- Table of reviews -->
         <table class="table table-bordered">
             <thead>
                 <tr>
                     <th>Review ID</th>
-                    <th>Customer</th>
-                    <th>Review Text</th>
                     <th>Product</th>
+                    <th>Customer</th>
+                    <th>Review</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -22,9 +21,9 @@
                 <!-- Example static data; replace with real data from model -->
                 <tr>
                     <td>5001</td>
-                    <td>John Doe</td>
-                    <td>Great motorbike, highly recommend!</td>
                     <td>Motorbike A</td>
+                    <td>John Doe</td>
+                    <td>Great product!</td>
                     <td>
                         <a href="/Home/ApproveReview?reviewId=5001" class="btn btn-success">Approve</a>
                         <a href="/Home/DeleteReview?reviewId=5001" class="btn btn-danger">Delete</a>
@@ -32,9 +31,9 @@
                 </tr>
                 <tr>
                     <td>5002</td>
-                    <td>Jane Doe</td>
-                    <td>Not satisfied with the helmet quality.</td>
                     <td>Helmet X</td>
+                    <td>Jane Smith</td>
+                    <td>Not satisfied with the quality.</td>
                     <td>
                         <a href="/Home/ApproveReview?reviewId=5002" class="btn btn-success">Approve</a>
                         <a href="/Home/DeleteReview?reviewId=5002" class="btn btn-danger">Delete</a>

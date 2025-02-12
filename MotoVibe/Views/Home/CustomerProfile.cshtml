@@ -1,23 +1,22 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewBag.Title = "Employee Profile";
+    ViewBag.Title = "Customer Profile";
 }
 
-<h2>Employee Profile</h2>
+<h2>My Profile</h2>
 
 <div class="row">
     <div class="col-md-6">
+        <!-- Example display of user information -->
         <h4>Personal Information</h4>
-        <!-- Example data, replace with real info -->
-        <p><strong>Name:</strong> Jane Smith</p>
-        <p><strong>Email:</strong> jane.smith@motovibe.com</p>
-        <p><strong>Phone:</strong> +1-555-5678</p>
-        <p><strong>Role:</strong> Service Technician</p>
+        <p><strong>Name:</strong> John Doe</p>
+        <p><strong>Email:</strong> john@example.com</p>
+        <p><strong>Phone:</strong> +1-555-1234</p>
 
         <hr />
 
         <h4>Update Profile</h4>
-        <form method="post" action="/Home/UpdateEmployeeProfile">
+        <form method="post" action="/Home/UpdateProfile">
             <div class="form-group">
                 <label for="newName">Name</label>
                 <input type="text" name="newName" id="newName" class="form-control" placeholder="Update your name" />

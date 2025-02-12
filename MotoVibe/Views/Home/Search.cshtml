@@ -1,0 +1,41 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Search";
+}
+
+<h2>Search Products</h2>
+<div class="row">
+    <div class="col-md-12">
+        <form method="get" action="/Home/Search">
+            <div class="form-group">
+                <label for="searchTerm">Enter product keyword</label>
+                <input type="text" name="searchTerm" id="searchTerm" class="form-control" placeholder="e.g. motorbike, helmet" />
+            </div>
+            <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Search</button>
+        </form>
+
+        <hr />
+
+        <!-- Search Results Section -->
+        <div>
+            <h4>Search Results:</h4>
+            <!-- If you are returning a model, you can loop through it here. Example: -->
+            <!--
+            @if (Model != null && Model.Count > 0)
+            {
+                <ul>
+                    @foreach (var product in Model)
+                    {
+                        <li>@product.Name</li>
+                    }
+                </ul>
+            }
+            else
+            {
+                <p>No results found.</p>
+            }
+            -->
+            <p>No results found. (Replace with real data)</p>
+        </div>
+    </div>
+</div>

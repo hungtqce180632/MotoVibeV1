@@ -1,0 +1,19 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Disable Blog";
+}
+
+<h2>Disable Blog</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <form method="post" action="/Home/DisableBlog">
+            <div class="form-group">
+                <label for="blogId">Blog ID</label>
+                <input type="text" name="blogId" id="blogId" class="form-control" placeholder="Enter Blog ID to disable" required />
+            </div>
+
+            <button type="submit" class="btn btn-danger" style="margin-top: 10px;">Disable Blog</button>
+        </form>
+    </div>
+</div>

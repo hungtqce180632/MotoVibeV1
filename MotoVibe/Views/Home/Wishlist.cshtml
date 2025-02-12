@@ -1,0 +1,37 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Wishlist";
+}
+
+<h2>My Wishlist</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Add to Cart</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Example static data; replace with real data from model -->
+                <tr>
+                    <td>Motorbike A</td>
+                    <td>$1,500</td>
+                    <td>
+                        <a href="/Home/MakeOrder?productId=1" class="btn btn-success">Order Now</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Helmet X</td>
+                    <td>$50</td>
+                    <td>
+                        <a href="/Home/MakeOrder?productId=10" class="btn btn-success">Order Now</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

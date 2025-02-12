@@ -1,0 +1,48 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Order Management";
+}
+
+<h2>Order Management</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Order #</th>
+                    <th>Customer</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Total</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Example static data; replace with real data from model -->
+                <tr>
+                    <td>1001</td>
+                    <td>John Doe</td>
+                    <td>2025-01-15</td>
+                    <td>Shipped</td>
+                    <td>$1,500</td>
+                    <td>
+                        <a href="/Home/OrderDetails?orderId=1001" class="btn btn-primary">Details</a>
+                        <a href="/Home/CancelOrder?orderId=1001" class="btn btn-danger">Cancel</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1002</td>
+                    <td>Jane Smith</td>
+                    <td>2025-01-20</td>
+                    <td>Processing</td>
+                    <td>$2,000</td>
+                    <td>
+                        <a href="/Home/OrderDetails?orderId=1002" class="btn btn-primary">Details</a>
+                        <a href="/Home/CancelOrder?orderId=1002" class="btn btn-danger">Cancel</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

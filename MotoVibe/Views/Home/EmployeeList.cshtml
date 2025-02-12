@@ -1,0 +1,42 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Employee List";
+}
+
+<h2>Employee List</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Employee Name</th>
+                    <th>Role</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Example static data; replace with real data from model -->
+                <tr>
+                    <td>John Doe</td>
+                    <td>Admin</td>
+                    <td>john.doe@motovibe.com</td>
+                    <td>
+                        <a href="/Home/EditEmployee?employeeId=1" class="btn btn-warning">Edit</a>
+                        <a href="/Home/DisableEmployee?employeeId=1" class="btn btn-danger">Disable</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Jane Smith</td>
+                    <td>Technician</td>
+                    <td>jane.smith@motovibe.com</td>
+                    <td>
+                        <a href="/Home/EditEmployee?employeeId=2" class="btn btn-warning">Edit</a>
+                        <a href="/Home/DisableEmployee?employeeId=2" class="btn btn-danger">Disable</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Blog Management";
+}
+
+<h2>Blog Management</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Blog Title</th>
+                    <th>Author</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Example static data; replace with real data from model -->
+                <tr>
+                    <td>First Blog Title</td>
+                    <td>John Doe</td>
+                    <td>Published</td>
+                    <td>
+                        <a href="/Home/EditBlog?blogId=1" class="btn btn-warning">Edit</a>
+                        <a href="/Home/DisableBlog?blogId=1" class="btn btn-danger">Disable</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Second Blog Title</td>
+                    <td>Jane Smith</td>
+                    <td>Draft</td>
+                    <td>
+                        <a href="/Home/EditBlog?blogId=2" class="btn btn-warning">Edit</a>
+                        <a href="/Home/DisableBlog?blogId=2" class="btn btn-danger">Disable</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

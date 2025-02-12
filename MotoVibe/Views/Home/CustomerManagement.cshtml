@@ -1,0 +1,45 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Customer Management";
+}
+
+<h2>Customer Management</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Customer Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Example static data; replace with real data from model -->
+                <tr>
+                    <td>John Doe</td>
+                    <td>john.doe@example.com</td>
+                    <td>+1-555-1234</td>
+                    <td>Active</td>
+                    <td>
+                        <a href="/Home/EditCustomer?customerId=1" class="btn btn-warning">Edit</a>
+                        <a href="/Home/DisableCustomer?customerId=1" class="btn btn-danger">Disable</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Jane Smith</td>
+                    <td>jane.smith@example.com</td>
+                    <td>+1-555-5678</td>
+                    <td>Active</td>
+                    <td>
+                        <a href="/Home/EditCustomer?customerId=2" class="btn btn-warning">Edit</a>
+                        <a href="/Home/DisableCustomer?customerId=2" class="btn btn-danger">Disable</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
