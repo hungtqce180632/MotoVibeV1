@@ -3,119 +3,228 @@
     ViewBag.Title = "Home Page";
 }
 
-<<<<<<< HEAD
-<div class="jumbotron">
-    <h1>Welcome to MotoVibe</h1>
-    <p class="lead">
-        Find the best motorbikes, accessories, and service appointments.
-    </p>
-    <hr class="my-4" />
-    <p>
-        <a class="btn btn-primary btn-lg" href="/Home/Search" role="button">Search Products</a>
-        <a class="btn btn-success btn-lg" href="/Home/Blog" role="button">Check out our Blog</a>
-    </p>
+<div style="background-image: url('/Content/images/index.png'); background-size: cover; height: 100vh;">
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="hero-text">
+            <h1 class="display-4">Welcome to MotoVibe</h1>
+            <p class="lead">Find the best motorbikes, accessories, and service appointments.</p>
+        </div>
+    </section>
+
+    <!-- Image Slider for Latest Products (Show 3 Products at a Time) -->
+    <section class="image-slider py-5">
+        <div class="container text-center">
+            <h2>Latest Products</h2>
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="productSlider" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <img src="/Content/images/motorbike1.jpg" class="d-block w-100" alt="Motorbike 1">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img src="/Content/images/motorbike2.jpg" class="d-block w-100" alt="Motorbike 2">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img src="/Content/images/motorbike3.jpg" class="d-block w-100" alt="Motorbike 3">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <img src="/Content/images/motorbike4.jpg" class="d-block w-100" alt="Motorbike 4">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img src="/Content/images/motorbike5.jpg" class="d-block w-100" alt="Motorbike 5">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img src="/Content/images/motorbike6.jpg" class="d-block w-100" alt="Motorbike 6">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#productSlider" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#productSlider" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Electric Motorbike Section -->
+    <section class="electric-motorcycle py-5 bg-light">
+        <div class="container text-center">
+            <h2>Electric Motorbike</h2>
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="electricMotorcycleCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="/Content/images/electric1.jpg" class="d-block w-100" alt="Electric Motorbike 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/Content/images/electric2.jpg" class="d-block w-100" alt="Electric Motorbike 2">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#electricMotorcycleCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#electricMotorcycleCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Big Displacement Motorcycle Section -->
+    <section class="big-displacement-motorcycle py-5">
+        <div class="container text-center">
+            <h2>Big Displacement Motorcycle</h2>
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="bigDisplacementCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="/Content/images/bigdisplacement1.jpg" class="d-block w-100" alt="Big Displacement Motorbike 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/Content/images/bigdisplacement2.jpg" class="d-block w-100" alt="Big Displacement Motorbike 2">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#bigDisplacementCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#bigDisplacementCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scooter Section -->
+    <section class="scooter py-5 bg-light">
+        <div class="container text-center">
+            <h2>Scooter</h2>
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="scooterCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="/Content/images/scooter1.jpg" class="d-block w-100" alt="Scooter 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/Content/images/scooter2.jpg" class="d-block w-100" alt="Scooter 2">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#scooterCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#scooterCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Post Section -->
+    <section class="posts-section py-5 bg-light">
+        <div class="container text-center">
+            <h2>Latest Posts</h2>
+            <p>Stay updated with our latest posts and news.</p>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <img src="/Content/images/blog1.jpg" class="card-img-top" alt="Blog 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Blog Post 1</h5>
+                            <p class="card-text">Get tips on choosing the best motorbike.</p>
+                            <a href="/Home/Blog" class="btn btn-dark">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <img src="/Content/images/blog2.jpg" class="card-img-top" alt="Blog 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Blog Post 2</h5>
+                            <p class="card-text">Latest trends in motorbike accessories.</p>
+                            <a href="/Home/Blog" class="btn btn-dark">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
-=======
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+
+<style>
+    .hero-section {
+        background-size: cover;
+        background-position: center;
+        color: white;
+        text-align: center;
+        padding: 80px 0;
+    }
+
+    .hero-text h1 {
+        font-size: 3.5rem;
+        font-weight: bold;
+    }
+
+    .hero-text p {
+        font-size: 1.25rem;
+    }
+
+    .carousel-inner img {
+        height: 300px;
+        object-fit: cover;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        background-color: #000;
+    }
+
+    .navbar-nav {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 10px;
+        text-align: center;
+    }
+
+    media (max-width: 768px) {
+        .hero-section {
+            padding: 60px 20px;
         }
 
-<<<<<<< HEAD
-    <div class="row">
-        <section class="col-md-4" aria-labelledby="gettingStartedTitle">
-            <h2 id="gettingStartedTitle">Getting started</h2>
-            <p>
-                hung rất đẹp trai
-                enables a clean separation of concerns and gives you full control over markup
-                for enjoyable, agile development.
-            </p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-        </section>
-        <section class="col-md-4" aria-labelledby="librariesTitle">
-            <h2 id="librariesTitle">Get more libraries</h2>
-            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-        </section>
-        <section class="col-md-4" aria-labelledby="hostingTitle">
-            <h2 id="hostingTitle">Web Hosting</h2>
-            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-        </section>
-=======
-        html, body {
-            width: 100%;
-            height: 100%;
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+        .carousel-inner img {
+            height: 200px;
         }
-
-        .header {
-            width: 100%;
-            background: black;
-            color: white;
-            padding: 20px;
-            font-size: 24px;
-            text-align: center;
-            position: fixed;
-            top: 0;
-            left: 0;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 800px;
-            margin-top: 80px;
-            padding: 40px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            text-align: center;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 15px 30px;
-            margin: 15px;
-            color: white;
-            background: black;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 18px;
-            cursor: pointer;
-        }
-
-            .btn:hover {
-                background: #333;
-            }
-    </style>
-</head>
-<body>
-    <div class="header">
-        MotoVibe Store
-
-
-<div class="row">
-    <div class="col-md-12">
-        <h2>Latest Products</h2>
-        <!-- Example product listing (could be replaced with dynamic data) -->
-        <ul>
-            <li>Motorbike A</li>
-            <li>Motorbike B</li>
-            <li>Motorbike C</li>
-        </ul>
-    </div>
-</div>
+    }
+</style>

@@ -13,6 +13,18 @@
             --light-color: #f8f9fa;
         }
 
+        /* Flexbox layout for body */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Content should take all available space */
+        main {
+            flex-grow: 1;
+        }
+
         .navbar {
             background-color: var(--dark-color) !important;
             border-bottom: 3px solid var(--primary-color);
@@ -29,17 +41,20 @@
             transition: all 0.3s ease;
         }
 
-            .nav-link:hover {
-                color: var(--primary-color) !important;
-            }
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
 
+        /* Footer Styling */
         .footer {
             background-color: var(--dark-color);
             color: var(--light-color);
             padding: 20px 0;
             margin-top: 50px;
+            text-align: center;
         }
 
+        /* Hero Section Styling */
         .hero-section {
             background: url('/Content/images/banner.jpg') center/cover;
             height: 400px;
@@ -47,11 +62,33 @@
             align-items: center;
             margin-bottom: 30px;
         }
+
+        /* Navbar and footer alignment for mobile */
+        media (max-width: 768px) {
+            .navbar-nav {
+                text-align: center;
+            }
+
+            .footer .container {
+                text-align: center;
+            }
+        }
+
+        /* Social Media Icons Styling */
+        .social-links a {
+            font-size: 1.5em;
+            color: var(--light-color);
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
+        <div class="container-fluid">
             <a class="navbar-brand" href="@Url.Action("Index", "Home")">
                 <img src="/Content/images/logo.png" alt="MotoVibe Logo" height="40" class="d-inline-block align-top me-2">
                 MotoVibe
@@ -88,6 +125,18 @@
                         <li class="nav-item">@Html.ActionLink("Login", "Login", "Account", null, new { @class = "nav-link" })</li>
                         <li class="nav-item">@Html.ActionLink("Register", "SignUp", "Account", null, new { @class = "nav-link" })</li>
                     }
+
+                    <!-- Add Search and Wish List to Header -->
+                    <li class="nav-item">
+                        <a href="/Home/Search" class="nav-link">
+                            <i class="fas fa-search"></i> <!-- Search Icon -->
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/Home/Wishlist" class="nav-link">
+                            <i class="fas fa-wallet"></i> <!-- Wallet Icon -->
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -115,9 +164,9 @@
                 <div class="col-md-4">
                     <h5>Follow Us</h5>
                     <div class="social-links">
-                        <a href="#" class="text-light me-3"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="text-light me-3"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-light me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-light me-3" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-light me-3" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-light me-3" target="_blank"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
             </div>
