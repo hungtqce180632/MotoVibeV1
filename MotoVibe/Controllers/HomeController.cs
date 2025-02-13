@@ -83,6 +83,12 @@ namespace MotoVibe.Controllers
         {
             return View();
         }
+        
+
+        public ActionResult ProductList()
+        {
+            return View();
+        }
 
         // Product List Page (Motorbikes)
         public ActionResult Listproduct()
