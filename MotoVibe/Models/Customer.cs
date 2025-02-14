@@ -1,25 +1,42 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MotoVibe.Models
 {
+    [Table("customers")] // Maps this class to the customers table
     public class Customer
     {
         [Key]
-        public int Customer_id { get; set; }
+        [Column("customer_id")]
+        public int CustomerId { get; set; }
 
-        public int User_id { get; set; }
+        // Foreign Key to user_account table
+        [Column("user_id")]
+        public int UserId { get; set; }
+
+        [ForeignKey("UserId")]
         public virtual UserAccount UserAccount { get; set; }
 
-        [Required]
+        [Column("name")]
         public string Name { get; set; }
 
-        [EmailAddress]
+        [Column("email")]
         public string Email { get; set; }
 
+        [Column("picture")]
         public string Picture { get; set; }
-        public string Phone_number { get; set; }
+
+        [Column("phone_number")]
+        public string PhoneNumber { get; set; }
+
+        [Column("address")]
         public string Address { get; set; }
-        public string Cus_id_number { get; set; }
-        public string Preferred_contact_method { get; set; }
+
+        [Column("cus_id_number")]
+        public string CusIdNumber { get; set; }
+
+        [Column("preferred_contact_method")]
+        public string PreferredContactMethod { get; set; }
     }
 }

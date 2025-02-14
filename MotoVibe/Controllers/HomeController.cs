@@ -35,15 +35,16 @@ namespace MotoVibe.Controllers
         }
 
         // GET: Home/BlogDetails
-        public ActionResult BlogDetails(int id)
+        /*public ActionResult BlogDetails(int id)
         {
-            var blog = db.Blogs.FirstOrDefault(b => b.Blog_id == id);
+            // Adjust 'b.BlogId' if your Blog model property is named differently
+            var blog = db.Blogs.FirstOrDefault(b => b.BlogId == id);
             if (blog == null)
             {
                 return HttpNotFound();
             }
             return View(blog);
-        }
+        }*/
 
         // GET: Home/SignUp
         public ActionResult SignUp()
@@ -68,20 +69,20 @@ namespace MotoVibe.Controllers
         // GET: Home/Listproduct
         public ActionResult Listproduct()
         {
-            var products = db.Motorbikes.ToList();  // Make sure you have a list of motorbikes
+            var products = db.Motorbikes.ToList();  // Ensure you have a DbSet<Motorbike> in AppDbContext
             return View(products);
         }
 
         // GET: Home/CustomerProfile
         public ActionResult CustomerProfile(int id)
         {
-            var customer = db.Customers.FirstOrDefault(c => c.Customer_id == id);
+            // Use 'CustomerId' (the C# property name), not 'Customer_id'
+            var customer = db.Customers.FirstOrDefault(c => c.CustomerId == id);
             if (customer == null)
             {
                 return HttpNotFound();
             }
             return View(customer);
         }
-        
     }
 }

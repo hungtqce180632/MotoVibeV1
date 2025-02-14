@@ -1,27 +1,29 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MotoVibe.Models
 {
+    [Table("user_account")] // Maps this class to the user_account table
     public class UserAccount
     {
         [Key]
-        public int User_id { get; set; }
+        [Column("user_id")]
+        public int UserId { get; set; }
 
-        [Required]
-        [EmailAddress]
+        [Column("email")]
         public string Email { get; set; }
 
-        [Required]
-        [DataType(DataType.Password)]
+        [Column("password")]
         public string Password { get; set; }
 
-        [Required]
+        [Column("role")]
         public string Role { get; set; }
 
-        [DataType(DataType.Date)]
-        public DateTime Date_created { get; set; }
+        [Column("date_created")]
+        public DateTime DateCreated { get; set; }
 
+        [Column("status")]
         public bool Status { get; set; }
     }
 }

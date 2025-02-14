@@ -173,6 +173,7 @@
     <Compile Include="Models\Warranty.cs" />
     <Compile Include="Models\Wishlist.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Views\Account\SignUp.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-grid.css" />

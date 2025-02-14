@@ -4,11 +4,12 @@ namespace MotoVibe.Models
 {
     public class AppDbContext : DbContext
     {
-        public AppDbContext() : base("name=MotoVibeConnection")
+        public AppDbContext() : base("MotoVibeConnection")
         {
         }
 
         // Add DbSets for all models
+
         public DbSet<UserAccount> UserAccounts { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Employee> Employees { get; set; }
