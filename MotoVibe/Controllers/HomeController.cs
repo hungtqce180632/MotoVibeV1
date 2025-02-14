@@ -82,5 +82,9 @@ namespace MotoVibe.Controllers
             }
             return View(customer);
         }
+        public ActionResult Login()
+        {
+            return View();
+        }
     }
 }
