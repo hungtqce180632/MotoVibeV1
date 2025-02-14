@@ -230,7 +230,7 @@
     <Content Include="Views\Home\CreateAppointment.cshtml" />
     <Content Include="Views\Home\EmployeeProfile.cshtml" />
     <Content Include="Views\Home\ViewListOrder.cshtml" />
-    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Home\listproduct.cshtml" />
     <Content Include="Views\Home\detailproduct.cshtml" />
     <Content Include="Views\Home\Blog.cshtml" />
