@@ -26,7 +26,7 @@ namespace MotoVibe.Controllers
         {
             return View();
         }
-
+        
         // GET: Home/Blog
         public ActionResult Blog()
         {
@@ -74,15 +74,25 @@ namespace MotoVibe.Controllers
         }
 
         // GET: Home/CustomerProfile
-        public ActionResult CustomerProfile(int id)
+        public ActionResult CustomerProfile()
         {
-            // Use 'CustomerId' (the C# property name), not 'Customer_id'
-            var customer = db.Customers.FirstOrDefault(c => c.CustomerId == id);
+            var user = Session["User"] as MotoVibe.Models.UserAccount;
+
+            if (user == null)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+            var customer = db.Customers.FirstOrDefault(c => c.UserId == user.UserId);
+
             if (customer == null)
             {
-                return HttpNotFound();
+                // Handle the case where no customer is found
+                ViewBag.ErrorMessage = "Customer profile not found.";
+                return View();  // You can redirect to another view or show a message here
             }
-            return View(customer);
+
+            return View(customer); // Pass the customer object to the view
         }
     }
 }

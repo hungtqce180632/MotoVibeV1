@@ -1,38 +1,48 @@
-﻿@{
+@model MotoVibe.Models.Customer
+
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Customer Profile";
 }
 
-<h2>My Profile</h2>
 
-<div class="row">
-    <div class="col-md-6">
-        <!-- Example display of user information -->
-        <h4>Personal Information</h4>
-        <p><strong>Name:</strong> John Doe</p>
-        <p><strong>Email:</strong> john@example.com</p>
-        <p><strong>Phone:</strong> +1-555-1234</p>
 
-        <hr />
+<h2>Customer Profile</h2>
 
-        <h4>Update Profile</h4>
-        <form method="post" action="/Home/UpdateProfile">
-            <div class="form-group">
-                <label for="newName">Name</label>
-                <input type="text" name="newName" id="newName" class="form-control" placeholder="Update your name" />
-            </div>
+<div class="customer-profile">
+    <h3>Profile Information</h3>
 
-            <div class="form-group" style="margin-top: 10px;">
-                <label for="newEmail">Email</label>
-                <input type="email" name="newEmail" id="newEmail" class="form-control" placeholder="Update your email" />
-            </div>
+    <div class="row">
+        <div class="col-md-6">
+            <strong>Name:</strong> @Model.Name
+        </div>
+        <div class="col-md-6">
+            <strong>Email:</strong> @Model.Email
+        </div>
+    </div>
 
-            <div class="form-group" style="margin-top: 10px;">
-                <label for="newPhone">Phone</label>
-                <input type="text" name="newPhone" id="newPhone" class="form-control" placeholder="Update your phone" />
-            </div>
+    <div class="row">
+        <div class="col-md-6">
+            <strong>Phone Number:</strong> @Model.PhoneNumber
+        </div>
+        <div class="col-md-6">
+            <strong>Address:</strong> @Model.Address
+        </div>
+    </div>
 
-            <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Save Changes</button>
-        </form>
+    <div class="row">
+        <div class="col-md-6">
+            <strong>Preferred Contact Method:</strong> @Model.PreferredContactMethod
+        </div>
+        <div class="col-md-6">
+            <strong>Customer ID Number:</strong> @Model.CusIdNumber
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <strong>Profile Picture:</strong>
+            <img src="@Url.Content("~/Images/johndoe.jpg")" alt="Profile Picture" class="img-thumbnail" />
+        </div>
     </div>
 </div>
