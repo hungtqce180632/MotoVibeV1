@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Web.Mvc;
+using System.Web.Security;
 using MotoVibe.Models;
 
 namespace MotoVibe.Controllers
@@ -42,7 +43,7 @@ namespace MotoVibe.Controllers
         }
 
         [HttpPost] // Only handles POST requests
-        public ActionResult Login(string username, string password, bool rememberMe = false)
+        public ActionResult Login(string username, string password)
         {
             // Query the user_account table
             var user = db.UserAccounts
@@ -51,14 +52,20 @@ namespace MotoVibe.Controllers
             // Check if username and password are valid
             if (user != null)
             {
-                // For real apps, you'd typically set an auth cookie or session
-                // For now, just redirect to Home as a placeholder
+                Session["User"] = user;
+                
                 return RedirectToAction("Index", "Home");
             }
 
             // If login fails, return to login page with an error message
             ViewBag.Error = "Invalid username or password";
             return View();
+        }
+        public ActionResult Logout()
+        {
+            Session.Clear();
+            Session.Abandon();
+            return RedirectToAction("Index", "Home");
         }
     }
 }

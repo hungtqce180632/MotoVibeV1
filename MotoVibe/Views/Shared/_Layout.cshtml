@@ -87,54 +87,77 @@
     </style>
 </head>
 <body>
+    @{ 
+        var user = Session["User"] as MotoVibe.Models.UserAccount;
+    }
+
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="@Url.Action("Index", "Home")">
                 <img src="/Content/images/logo.png" alt="MotoVibe Logo" height="40" class="d-inline-block align-top me-2">
                 MotoVibe
             </a>
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })</li>
-                    <li class="nav-item">@Html.ActionLink("Motorcycles", "Listproduct", "Home", null, new { @class = "nav-link" })</li>
-                    <li class="nav-item">@Html.ActionLink("Blog", "Blog", "Home", null, new { @class = "nav-link" })</li>
 
-                    @if (Request.IsAuthenticated)
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Thanh nav chính -->
+                <ul class="navbar-nav ms-auto">
+                    <!-- Link mặc định -->
+                    <li class="nav-item">
+                        @Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Motorcycles", "Listproduct", "Home", null, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Blog", "Blog", "Home", null, new { @class = "nav-link" })
+                    </li>
+
+     
+                    @if (user != null)
                     {
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                                <i class="fas fa-user"></i> Account
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end">
-                                @if (User.IsInRole("Admin"))
-                                {
-                                    <li>@Html.ActionLink("Dashboard", "AdminDashboard", "Home", null, new { @class = "dropdown-item" })</li>
-                                }
-                                <li>@Html.ActionLink("Profile", "CustomerProfile", "Home", null, new { @class = "dropdown-item" })</li>
-                                <li>@Html.ActionLink("Orders", "ViewListOrder", "Home", null, new { @class = "dropdown-item" })</li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li>@Html.ActionLink("Logout", "Logout", "Account", null, new { @class = "dropdown-item text-danger" })</li>
-                            </ul>
+                   
+                        if (user.Role == "admin")
+                        {
+                            <li class="nav-item">
+                                @Html.ActionLink("Dashboard", "AdminDashboard", "Home", null, new { @class = "nav-link" })
+                            </li>
+                        }
+
+                        <li class="nav-item">
+                            @Html.ActionLink(user.Email, "CustomerProfile", "Home", null, new { @class = "nav-link" })
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("Orders", "ViewListOrder", "Home", null, new { @class = "nav-link" })
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("Logout", "Logout", "Account", null, new { @class = "nav-link text-danger" })
                         </li>
                     }
                     else
                     {
-                        <li class="nav-item">@Html.ActionLink("Login", "Login", "Account", null, new { @class = "nav-link" })</li>
-                        <li class="nav-item">@Html.ActionLink("Register", "SignUp", "Account", null, new { @class = "nav-link" })</li>
+                        <li class="nav-item">
+                            @Html.ActionLink("Login", "Login", "Account", null, new { @class = "nav-link" })
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("Register", "SignUp", "Account", null, new { @class = "nav-link" })
+                        </li>
                     }
 
-                    <!-- Add Search and Wish List to Header -->
+                    <!-- Search Icon -->
                     <li class="nav-item">
                         <a href="/Home/Search" class="nav-link">
-                            <i class="fas fa-search"></i> <!-- Search Icon -->
+                            <i class="fas fa-search"></i>
                         </a>
                     </li>
+
+                    <!-- Wishlist Icon -->
                     <li class="nav-item">
                         <a href="/Home/Wishlist" class="nav-link">
-                            <i class="fas fa-wallet"></i> <!-- Wallet Icon -->
+                            <i class="fas fa-wallet"></i>
                         </a>
                     </li>
                 </ul>
